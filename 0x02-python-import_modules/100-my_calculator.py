@@ -19,5 +19,3 @@ if __name__ == "__main__":
         b = int(sys.argv[3])
         result = ops[args](a, b)
         print("{} {} {} = {}".format(a, op, b, result))
-    except ZeroDivisionError:
-        sys.exit(1)
