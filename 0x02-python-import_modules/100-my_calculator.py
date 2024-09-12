@@ -8,7 +8,6 @@ def main():
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
 
-
     try:
         a = int(sys.argv[1])
         b = int(sys.argv[3])
@@ -18,7 +17,6 @@ def main():
         sys.exit(1)
 
     ops = {'+': add, '-': sub, '*': mul, '/': div}
-
 
     if operator not in ops:
         print("Unknown operator. Available operators: +, -, * and /")
@@ -31,5 +29,7 @@ def main():
     except ZeroDivisionError:
         sys.exit(1)
 
+
 if __name__ == "__main__":
+
     main()
