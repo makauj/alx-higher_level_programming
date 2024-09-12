@@ -1,4 +1,4 @@
-#0x02 Python - import & modules
+# **0x02 Python - import & modules**
 Welcome to the Python Modules Learning Project! This repository is a collection of Python modules and packages designed to help learners understand and master the concept of Python modules.
 
 ## Table of Contents
@@ -8,8 +8,6 @@ Welcome to the Python Modules Learning Project! This repository is a collection 
 - [Installation](#installation)
 - [Usage](#usage)
 - [Examples](#examples)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
