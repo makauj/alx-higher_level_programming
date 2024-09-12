@@ -8,9 +8,9 @@ if __name__ == "__main__":
         sys.exit(1)
 
     ops = {"+": add, "-": sub, "*": mul, "/": div}
-    args = sys.argv[2]
+    op = sys.argv[2]
 
-    if args not in ops:
+    if op not in ops:
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
 
@@ -18,4 +18,6 @@ if __name__ == "__main__":
         a = int(sys.argv[1])
         b = int(sys.argv[3])
         result = ops[args](a, b)
-        print("{} {} {} = {}".format(a, args, b, result))
+        print("{} {} {} = {}".format(a, op, b, result))
+    except ZeroDivisionError:
+        sys.exit(1)
