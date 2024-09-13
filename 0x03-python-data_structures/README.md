@@ -30,11 +30,11 @@ At the end of this project, you are expected to be able to explain to anyone, wi
  10. Write a function that finds all multiples of 2 in a list.
  11. Write a function that deletes the item at a specific position in a list.
  12. Complete the source code in order to switch value of a and b.
-python3```
+```python3
 #!/usr/bin/python3
 a = 89
 b = 10
-# YOUR CODE GOES HERE. PLEASE REMOVE THIS LINE
+//#YOUR CODE GOES HERE. PLEASE REMOVE THIS LINE
 print(a={:d} - b={:d}".format(a, b))
 ```
  13. Technical interview preparation:
