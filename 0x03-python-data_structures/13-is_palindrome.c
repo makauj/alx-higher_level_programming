@@ -16,13 +16,12 @@ int is_palindrome(listint_t **head)
 	if (!head || !*head)
 		return (1);/* Empty list returns 1 */
 
-	slow = head;
-	fast = head;
-	prev_slow = NULL;
+	slow = *head;
+	fast = *head;
 	/* find the middle of the list */
 	while (fast && fast->next)
 	{
-		prev_slow = slow
+		prev_slow = slow;
 		slow = slow->next;
 		fast = fast->next->next;
 	}
@@ -42,11 +41,15 @@ int is_palindrome(listint_t **head)
 	first_half = *head;
 	while (rev_sec_half)
 	{
-		if (first_half->n != sec_half->n)
+		if (first_half->n != rev_sec_half->n)
+		{
+			reverse_list(sec_half);
 			return (0);
+		}
 		first_half = first_half->next;
 		rev_sec_half = rev_sec_half->next;
 	}
+	reverse_list(sec_half);
 	return (1);
 }
 
