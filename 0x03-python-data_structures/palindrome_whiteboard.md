@@ -31,7 +31,7 @@ For example, 1->2->3->3->2->1 is a palindrome.
 4. Restoring the List:
 	- To preserve the original list, reverse the second half back to its original form after the comparison.
 
-##Pseudocode
+## Pseudocode
 
 ```pseudocode
 FUNCTION is_palindrome(head)
