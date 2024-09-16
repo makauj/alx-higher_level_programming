@@ -22,14 +22,14 @@ This information should include:
 
 ### Steps to Solve
 1. Include necessary Headers
-```
+```c
 #include <Python.h>
 #include <object.h>
 #include <listobject.h>
 ```
 
 2. Function Definition
-```
+```c
 void print_python_list_info(PyObject *p)
 ```
 
@@ -43,7 +43,7 @@ void print_python_list_info(PyObject *p)
 	- Loop through each element in the list and print its type
 
 ## Pseudocode
-```
+```c
 #include <Python.h>
 #include <stdio.h>
 
