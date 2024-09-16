@@ -16,6 +16,7 @@ Create a C function that prints some basic info about Python lists.
 ### How I understood the problem
 Implement a C function that prints detailed information about Python lists.
 This information should include:
+
 	- The size of the list.
 	- Allocated space.
 	- Type of each element
