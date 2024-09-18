@@ -45,19 +45,19 @@ void print_python_list(PyObject *p)
     PyListObject *list;
     PyObject *obj;
 
-    size = ((PyVarObject *)(p))->ob_size; // Get size from the PyVarObject structure
-    list = (PyListObject *)p; // Cast to PyListObject
+    size = ((PyVarObject *)(p))->ob_size; /* Get size from the PyVarObject structure */
+    list = (PyListObject *)p; /* Cast to PyListObject */
 
     printf("[*] Python list info\n");
     printf("[*] Size of the Python List = %ld\n", size);
-    printf("[*] Allocated = %ld\n", list->allocated); // Print allocated size
+    printf("[*] Allocated = %ld\n", list->allocated); /* Print allocated size */
 
     for (i = 0; i < size; i++)
     {
-        obj = ((PyListObject *)p)->ob_item[i]; // Get each item
-        printf("Element %ld: %s\n", i, ((obj)->ob_type)->tp_name); // Print element type
-        if (PyBytes_Check(obj)) // Check if the element is a bytes object
-            print_python_bytes(obj); // Call the bytes function
+        obj = ((PyListObject *)p)->ob_item[i]; /* Get each item */
+        printf("Element %ld: %s\n", i, ((obj)->ob_type)->tp_name); /* Print element type */
+        if (PyBytes_Check(obj)) /* Check if the element is a bytes object */
+            print_python_bytes(obj); /* Call the bytes function */
     }
 }
 ```
@@ -88,28 +88,28 @@ void print_python_bytes(PyObject *p)
     long int size, i, limit;
 
     printf("[.] bytes object info\n");
-    if (!PyBytes_Check(p)) // Check if the object is a bytes object
+    if (!PyBytes_Check(p)) /* Check if the object is a bytes object */
     {
         printf("  [ERROR] Invalid Bytes Object\n");
         return;
     }
 
-    size = ((PyVarObject *)(p))->ob_size; // Get size
-    string = ((PyBytesObject *)p)->ob_sval; // Get the string value
+    size = ((PyVarObject *)(p))->ob_size; /* Get size */
+    string = ((PyBytesObject *)p)->ob_sval; /* Get the string value */
 
     printf("  size: %ld\n", size);
     printf("  trying string: %s\n", string);
 
-    limit = (size >= 10) ? 10 : size; // Determine limit for printing bytes
+    limit = (size >= 10) ? 10 : size; /* Determine limit for printing bytes */
 
     printf("  first %ld bytes:", limit);
 
     for (i = 0; i < limit; i++)
     {
         if (string[i] >= 0)
-            printf(" %02x", string[i]); // Print byte in hex format
+            printf(" %02x", string[i]); /* Print byte in hex format */
         else
-            printf(" %02x", 256 + string[i]); // Handle negative bytes
+            printf(" %02x", 256 + string[i]); /* Handle negative bytes */
     }
 
     printf("\n");
