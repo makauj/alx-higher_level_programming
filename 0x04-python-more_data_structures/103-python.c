@@ -7,6 +7,8 @@
 void print_python_list(PyObject *p)
 {
 	long size, i;
+	PyObject *item;
+
 	if (!PyList_Check(p))
 	{
 		printf("Error: Invalid List Object\n");
@@ -21,7 +23,7 @@ void print_python_list(PyObject *p)
 	/* Iterate through the list elements */
 	for (i = 0; i < size; i++)
 	{
-		PyObject *item = PyList_GetItem(p, i);
+		item = PyList_GetItem(p, i);
 		printf("Element %ld: %s\n", i, Py_TYPE(item)->tp_name);
 	}
 }
@@ -33,12 +35,13 @@ void print_python_list(PyObject *p)
 void print_python_bytes(PyObject *p)
 {
 	long size, display_size, i;
+
 	if (!PyBytes_Check(p))
 	{
 		printf("Error: Invalid Bytes Object\n");
 		return;
 	}
-	
+
 	size = PyBytes_Size(p);
 
 	display_size = size < 10 ? size : 10;
