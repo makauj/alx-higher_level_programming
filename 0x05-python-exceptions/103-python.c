@@ -12,7 +12,7 @@ void print_python_list(PyObject *p)
 {
 	Py_ssize_t size, alloc, index;
 	const char *type;
-	PyObject *list = (PyListObject *)p;
+	PyListObject *list = (PyListObject *)p;
 	PyVarObject *var = (PyVarObject *)p;
 
 	size = var->ob_size;
