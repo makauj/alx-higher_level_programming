@@ -5,7 +5,7 @@
 #### 1. What’s the difference between errors and exceptions
 **Errors** are prpblems that cause a program to stop it execution.
 **Exceptios** are raised when an internal event changes the program's normal flow.
-| |Errors|Exceptions|
+| Type |Errors|Exceptions|
 | ___ | ___ | ___ |
 |Nature of the issue|These are serious issues that typically arise from the environment in which the application is running. They are often beyond the control of the application and usually indicate problems that cannot be recovered from, such as running out of memory or a system crash. | These are issues that arise within the application itself and can often be anticipated and handled. They represent conditions that a program might want to catch and handle to maintain normal flow.|
 | Handling | Generally, errors are not meant to be caught or handled by the application. They are considered fatal and usually result in the termination of the program. |  Exceptions can be caught and handled using try-catch blocks. This allows the program to recover from the exception and continue executing.|
