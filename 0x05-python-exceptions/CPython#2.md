@@ -1,4 +1,4 @@
-Here's a detailed explanation of the provided C code, which defines functions to print information about Python list, bytes, and float objects. This includes usage scenarios and potential pitfalls.
+Here's a detailed explanation of the C code in 103-python.c, which defines functions to print information about Python list, bytes, and float objects. This includes usage scenarios and potential pitfalls.
 
 ### Overview of the Code
 
