@@ -2,14 +2,15 @@
 
 def list_division(my_list_1, my_list_2, list_length):
     result = []
+
     for i in range(list_length):
         try:
             if i >= len(my_list_1) or i >= len(my_list_2):
                 print("out of range")
                 result.append(0)
             else:
-                a = my_list_1
-                b = my_list_2
+                a = my_list_1[i]
+                b = my_list_2[i]
 
                 if not isinstance(a, (int, float)):
                     print("wrong type")
