@@ -5,6 +5,6 @@
 class Square:
     """Empty class(Does nothing)"""
 
-    def __init__(self, size="0"):
+    def __init__(self, size):
         """init this square class with argumnet `size`"""
         self._size = size
