@@ -23,7 +23,7 @@ class Square:
         self.__size = value
 
     def area(self):
-        return (self.__size ** 2)
+        return (self.__size * self.__size)
 
     def __eq__(self, other):
         return self.area() == other.area()
@@ -32,10 +32,13 @@ class Square:
         return self.area() <= other.area()
 
     def __lt__(self, other):
-        return self.area < other.area()
+        return self.area() < other.area()
 
     def __ge__(self, other):
-        return self.area >= other.area()
+        return self.area() >= other.area()
 
     def __gt__(self, other):
-        return self.area > other.area()
+        return self.area() > other.area()
+
+    def __ne__(self, other):
+        return self.area() != other.area()
