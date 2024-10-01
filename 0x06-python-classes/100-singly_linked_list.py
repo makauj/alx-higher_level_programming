@@ -36,11 +36,11 @@ class SinglyLinkedList:
         self.head = None
 
     def __str__(self):
-        cur = self.head
+        current = self.head
         result = []
-        while cur:
-            result.append(str(cur.data))
-            cur = cur.next_node
+        while current:
+            result.append(str(current.data))
+            current = current.next_node
         return "\n".joint(result)
 
     def sorted_insert(self, value):
@@ -52,9 +52,8 @@ class SinglyLinkedList:
             new_node.next_node = self.__head
             self.__head = new_node
         else:
-            cur = self.__head
-            while (cur.next_node is not None and
-                   cur.next_node.data < new_node.data):
-                cur = cur.next_node
-            new_node.next_node = cur.next_node
-            cur.next_node - new_node
+            current = self.__head
+            while current.next_node and current.next_node.data < new_node.data:
+                current = current.next_node
+            new_node.next_node = current.next_node
+            current.next_node - new_node
