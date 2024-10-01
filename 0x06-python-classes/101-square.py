@@ -44,19 +44,24 @@ class Square:
             print()
             return
 
-        for i in range(self.__position[1]):
+        for _ in range(self.__position[1]):
             print()
 
-        for i in range(self.__size):
+        for _ in range(self.__size):
             print(" " * self.__position[0] + "#" * self.__size)
-    
+
     def __str__(self):
+        """return string representation of the square"""
         output = ""
         if self.size == 0:
             return output
-        for i in range(self.__position[1]):
+
+        """Add empty lines for vertical position"""
+        for _ in range(self.__position[1]):
             output += "\n"
-        for i in range(self.__size):
+
+        """Add the square rows to the output"""
+        for _ in range(self.__size):
             output += " " * self.__position[0] + "#" * self.__size + "\n"
 
         return output.rstrip()
