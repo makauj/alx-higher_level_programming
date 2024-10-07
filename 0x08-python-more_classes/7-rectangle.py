@@ -46,11 +46,19 @@ class Rectangle:
         return (self.__height + self.__width) * 2
 
     def __str__(self) -> str:
+        """Returns a string representation of the rectangle using print_symbol"""
         if self.__width == 0 or self.__height == 0:
             return ("")
         rectangle = ""
-        return ("\n".join([str(self.print_symbol) * self.__width
-                           for _ in range(self.__height)]))
+        for column in range(self.__height):
+            for row in range(self.__width):
+                try:
+                    rectangle += str(self.print_symbol)
+                except Exception:
+                    rectangle += type(self).print_symbol
+            if column < self.__height - 1:
+                rectangle += "\n"
+        return (rectangle)
 
     def __repr__(self):
         return f"Rectangle({self.__width}, {self.__height})"
