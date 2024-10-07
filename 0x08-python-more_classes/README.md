@@ -94,3 +94,5 @@ Repo for learning more about OOP
 
 ### Constraints
 - You are only allowed to import the `sys` module.
+
+For further notes on this, please read (notes.md)[].
