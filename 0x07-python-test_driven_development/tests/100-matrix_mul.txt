@@ -1,7 +1,7 @@
 How to Use 100-matrix_mul.py
 ============================
 
-This module defines a matrix multiplication function ``matrix_mul(m_a, m_b)``.
+This module defines the function ``matrix_mul(m_a, m_b)``.
 
 Usage
 =====
@@ -29,7 +29,7 @@ Usage
     >>> print(matrix_mul(m_a, m_b))
     [[13, 16]]
 
-The function also works with floating-point numbers.
+The function works with floats.
 
 ::
 
@@ -62,7 +62,7 @@ Integers and floats can be combined.
     >>> print(matrix_mul(m_a, m_b))
     [[73.03999999999999, 84.5, 95.4], [166.58800000000002, 195.8, 223.74]]
 
-A minimum of two arguments must be provided. Otherwise, a TypeError is raised.
+At least two arguments must be provided. Otherwise, a TypeError is raised.
 
 ::
 
