@@ -1,7 +1,4 @@
 ================================
-7-base_geometry.py test suite
-================================
-
 Importing the function from the module:
         >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
