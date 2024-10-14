@@ -7,4 +7,10 @@ class MyList(list):
 
     def print_sorted(self):
         """Print a list in sorted ascending order."""
-        print(sorted(self))
+        sorted_list = self[:]
+
+        for i in range(len(sorted_list)):
+            for j in range(0, len(sorted_list) - i - 1):
+                if sorted_list[j] > sorted_list[j + 1]:
+                    sorted_list[j], sorted_list[j + 1] = sorted_list[j + 1], sorted_list[j]
+        print(sorted_list)
