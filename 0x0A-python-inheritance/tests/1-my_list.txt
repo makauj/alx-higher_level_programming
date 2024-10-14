@@ -1,6 +1,20 @@
-case 0: import
-    >>> MyList = __import__('1-my_list').MyList
-    >>>
+The ``1-my_list`` module
+======================
+
+Using ``MyList``
+-------------------
+
+Importing the function from the module:
+
+    >>> MyList = __import__("1-my_list").MyList
+
+-------------------------------------------
+
+Checking for module docstring:
+
+    >>> my_list = __import__("1-my_list").__doc__
+    >>> len(my_list) > 1
+	True
 
 -------------------------------------------
 
@@ -103,13 +117,5 @@ case 8: negative numbers
     >>> my_list.print_sorted()
     [-5, -1, 1, 5, 51]
     >>>
-
--------------------------------------------
-
-case 9: module docstring
-
-    >>> m = __import__("1-my_list").__doc__
-    >>> len(m) > 1
-    True
 
 -------------------------------------------
