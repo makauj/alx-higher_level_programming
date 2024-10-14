@@ -1,6 +1,3 @@
-1-my_list.py tests
--------------------------------------------
-
 case 0: import
 >>> MyList = __import__('1-my_list').MyList
 >>>
