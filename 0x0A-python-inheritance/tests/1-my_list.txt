@@ -1,4 +1,4 @@
-1-my_list.py test suite
+1-my_list.py tests
 -------------------------------------------
 
 case 0: import
@@ -106,3 +106,9 @@ case 8: negative numbers
 >>> my_list.print_sorted()
 [-5, -1, 1, 5, 51]
 >>>
+
+case 9: module docstring
+
+    >>> m = __import__("1-my_list").__doc__
+    >>> len(m) > 1
+    True
