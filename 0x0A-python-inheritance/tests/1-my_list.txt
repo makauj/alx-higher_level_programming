@@ -136,7 +136,7 @@ Note that lists of strings are sorted lexographically.
     >>> my_list.print_sorted()
     ['Betty', 'Brennan', 'Holberton', 'Poppy', 'School']
 
-Another friendly reminder that the original list is unaltered :)
+The original list is unalatered
 
 ::
 
