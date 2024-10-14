@@ -1,12 +1,16 @@
+================================
+7-base_geometry.py test suite
+================================
+
 Importing the function from the module:
-        >>> BG = __import__("7-base_geometry").BaseGeometry
+        >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
 Checking for module docstring:
          >>> m = __import__("7-base_geometry").__doc__
          >>> len(m) > 1
          True
 
-Checking for class docstring:
+Trying docstring:
          >>> c = __import__("7-base_geometry").BaseGeometry.__doc__
          >>> len(c) > 1
          True
@@ -20,7 +24,7 @@ Checking for method docstring:
           True
 
 Checking for area failure:
-	  >>> b = BG()
+	  >>> b = BaseGeometry()
 	  >>> b.area()
 	  Traceback (most recent call last):
 	  ...
@@ -41,7 +45,7 @@ Checking for integer == 0:
           ...
           ValueError: integer must be greater than 0
 
-Checking for integer < 0;
+Checking for negative values;
 	  >>> b.integer_validator("integer", -5)
 	  Traceback (most recent call last):
           ...

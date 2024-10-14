@@ -30,7 +30,9 @@ class Animal:
         self.__bloodType = bloodType
 
     def __str__(self):
-        return "A {} is {} it is {} it is {}".format(type(self).__name__, self.birth_type, self.appearance, self.bloodType)
+        return ("A {} is {} it is {} it is {}"
+                .format(type(self).__name__, self.birth_type,
+                        self.appearance, self.bloodType))
 
     class Mamal(Animal):
         def __init__(self, birthType="born alive",
@@ -49,4 +51,5 @@ class Animal:
             self.__nurseYoung = nurseYoung
 
         def __str__(self):
-            return super().__str__() + " and it is {} they nurse their young".format(self.nurseYoung)
+            return super().__str__() + " and it is {} they nurse" \
+        " their young".format(self.nurseYoung)
