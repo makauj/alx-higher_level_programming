@@ -1,7 +1,14 @@
 #!/usr/bin/python3
-class MyClass:
-    def my_method(self):
+lookup = __import__('0-lookup').lookup
+
+class MyClass1(object):
+    pass
+
+class MyClass2(object):
+    my_attr1 = 3
+    def my_meth(self):
         pass
 
-obj = MyClass()
-print(lookup(obj))
+print(lookup(MyClass1))
+print(lookup(MyClass2))
+print(lookup(int))
