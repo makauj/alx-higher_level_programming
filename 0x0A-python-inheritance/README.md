@@ -24,3 +24,5 @@ Inheritance is the capability of one class to derive the properties from another
 4. It is transitive in nature, ie. If B inherits from A, any class that inherits from B also inherits from A
 5. It is a simple and understandable model structure
 6. Easier to develop and maintain
+
+More stuff
