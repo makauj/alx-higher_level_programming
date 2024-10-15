@@ -2,18 +2,17 @@
 """script thst reads stdin line by line and computes metrics"""
 
 
-def print_stats(total_size, status_codes):
-    """prints total file size and status code metrics"""
-    print(f"filesize: {total_size}")
-    for code in sorted(status_codes.keys()):
-        if status_codes[code] > 0:
-            print(f"{code}: {status_codes[code]}")
+def print_stats(size, status_codes):
+    """Prints the total file size and the status code metrics."""
+    print("File size: {}".format(size))
+    for key in sorted(status_codes):
+        print("{}: {}".format(key, status_codes[key]))
 
 
 if __name__ == "__main__":
     import sys
 
-    total_size = 0
+    size = 0
     status_codes = {}
     valid_codes = ['200', '301', '400', '401', '403', '404', '405', '500']
     count = 0
@@ -21,7 +20,7 @@ if __name__ == "__main__":
     try:
         for line in sys.stdin:
             if count == 10:
-                print_stats(total_size, status_codes)
+                print_stats(size, status_codes)
                 count = 1
             else:
                 count += 1
@@ -29,7 +28,7 @@ if __name__ == "__main__":
             line = line.split()
 
             try:
-                total_size += int(line[-1])
+                size += int(line[-1])
             except (IndexError, ValueError):
                 pass
 
@@ -42,8 +41,8 @@ if __name__ == "__main__":
             except IndexError:
                 pass
 
-        print_stats(total_size, status_codes)
+        print_stats(size, status_codes)
 
     except KeyboardInterrupt:
-        print_stats(total_size, status_codes)
+        print_stats(size, status_codes)
         raise
