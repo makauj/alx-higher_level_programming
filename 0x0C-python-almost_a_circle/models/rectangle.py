@@ -88,7 +88,7 @@ class Rectangle(Base):
         define the format of the string representation of a rectange
         """
         return (f"[Rectangle] ({self.__id})
-                {self.__x} / {self.__y} - {self.__width}/{self.__height}")
+                {self.__x}/{self.__y} - {self.__width}/{self.__height}")
     
     def update(self, *args, **kwargs):
         """public method to assign an arg to each attribute"""
