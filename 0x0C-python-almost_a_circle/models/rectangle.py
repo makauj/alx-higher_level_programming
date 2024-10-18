@@ -125,7 +125,7 @@ class Rectangle(Base):
                 elif k == "y":
                     self.y = v
 
-    def to_dixtionary(self):
+    def to_dictionary(self):
         """methos that returns a dictionary with properties"""
         return {
             'id': self.id,
