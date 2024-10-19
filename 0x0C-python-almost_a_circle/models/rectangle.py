@@ -126,7 +126,7 @@ class Rectangle(Base):
                     self.y = v
 
     def to_dictionary(self):
-        """methos that returns a dictionary with properties"""
+        """method that returns a dictionary with properties"""
         return {
             'id': self.id,
             'width': self.width,
