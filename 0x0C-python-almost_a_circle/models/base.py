@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """base class"""
 import json
+import os
 
 
 class Base:
@@ -36,3 +37,41 @@ class Base:
             else:
                 f.write(Base.to_json_string(
                     [objs.to_dictionary() for objs in list_objs]))
+                
+    @staticmethod
+    def from_json_string(json_string):
+        """method to return the list of the JSON string representation"""
+        if json_string is None:
+            return "[]"
+        if json_string is not None and json_string != '':
+            if type(json_string) != str:
+                raise TypeError("json_string must be a string")
+        return json.loads(json_string)
+    
+    @classmethod
+    def create(cls, **dictionary):
+        """methos returns an instance with all attributes already set"""
+        if cls.__name__ == 'Rectangle':
+            dummy = cls(1, 1)
+        elif cls.__name__ == 'Square':
+            dummy = cls(1)
+        
+        dummy.update(**dictionary)
+        return dummy
+    
+    @classmethod
+    def load_from_file(cls):
+        """retuens a list of instances"""
+        json_file = cls.__name__ + ".json"
+        instances_list = []
+        dicts = []
+
+        if os.path(json_file):
+            with open(json_file, "r") as f:
+                json_file = f.read()
+                dicts = cls.from_json_string(json_file)
+                for dictionary in dicts:
+                    instances_list.append(cls.create(**dictionary))
+        return instances_list
+
+            
