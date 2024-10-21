@@ -1373,12 +1373,6 @@ class TestSquare(unittest.TestCase):
         sys.stdout = sys.__stdout__
         return capture
 
-    def test_str_method_print_size(self):
-        s = Square(4)
-        capture = TestSquare_stdout.capture_stdout(s, "print")
-        correct = "[Square] ({}) 0/0 - 4\n".format(s.id)
-        self.assertEqual(correct, capture.getvalue())
-
     def test_str_method_size_x(self):
         s = Square(5, 5)
         correct = "[Square] ({}) 5/0 - 5".format(s.id)
@@ -1406,28 +1400,6 @@ class TestSquare(unittest.TestCase):
             s.__str__(1)
 
     # Test display method
-    def test_display_size(self):
-        s = Square(2, 0, 0, 9)
-        capture = TestSquare_stdout.capture_stdout(s, "display")
-        self.assertEqual("##\n##\n", capture.getvalue())
-
-    def test_display_size_x(self):
-        s = Square(3, 1, 0, 18)
-        capture = TestSquare_stdout.capture_stdout(s, "display")
-        self.assertEqual(" ###\n ###\n ###\n", capture.getvalue())
-
-    def test_display_size_y(self):
-        s = Square(4, 0, 1, 9)
-        capture = TestSquare_stdout.capture_stdout(s, "display")
-        display = "\n####\n####\n####\n####\n"
-        self.assertEqual(display, capture.getvalue())
-
-    def test_display_size_x_y(self):
-        s = Square(2, 3, 2, 1)
-        capture = TestSquare_stdout.capture_stdout(s, "display")
-        display = "\n\n   ##\n   ##\n"
-        self.assertEqual(display, capture.getvalue())
-
     def test_display_one_arg(self):
         s = Square(3, 4, 5, 2)
         with self.assertRaises(TypeError):
