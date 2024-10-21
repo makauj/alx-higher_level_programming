@@ -2,6 +2,7 @@
 """base class"""
 import json
 import os
+import csv
 
 
 class Base:
@@ -74,4 +75,17 @@ class Base:
                     instances_list.append(cls.create(**dictionary))
         return instances_list
 
-            
+    @classmethod
+    def save_to_file_csv(cls, list_obj):
+        """method to save instances to a csv file"""
+        filename = cls.__name__ + ".csv"
+        if not list_obj:
+            return
+        
+        fields = list_obj[0].__dict__.keys()
+        rows = [obj.__dict_.values() for obj in list_obj]
+
+        with open(filename, "w", newline='') as csvfile:
+            csvwriter = csv.writer(csvfile)
+            csvwriter.writerow(fields)
+            csvwriter.writerows(rows)
