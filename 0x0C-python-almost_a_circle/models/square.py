@@ -14,7 +14,7 @@ class Square(Rectangle):
     @property
     def size(self):
         """get size"""
-        return self.__width
+        return self._Rectangle__width
 
     @size.setter
     def size(self, value):
@@ -24,9 +24,13 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
+    def __str__(self):
+        """str method for square"""
+        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}/{self.size}"
+
     def update(self, *args, **kwargs):
-        """public method that assignes attributes"""
-        if args in len(kwargs):
+        """public method that assigns attributes"""
+        if args:
             a = 0
             for arg in args:
                 if a == 0:
@@ -58,7 +62,7 @@ class Square(Rectangle):
                     self.y = v
 
     def to_dictionary(self):
-        """methos that returns a dictionary with properties"""
+        """method that returns a dictionary with properties"""
         return {
             'id': self.id,
             'size': self.size,

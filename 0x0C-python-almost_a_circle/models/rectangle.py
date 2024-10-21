@@ -84,23 +84,21 @@ class Rectangle(Base):
 
     def display(self):
         """print rectangle using #"""
+        for _ in range(self.y):
+            print("")
         for _ in range(self.__height):
-            for x in range(self.x):
-                print(" ", end="")
-            for column in range(self.__width):
-                print("#", end="")
-            print()
+            print(" " * self.x + "#" * self.width)
 
     def __str__(self):
         """
-        define the format of the string representation of a rectange
+        define the format of the string representation of a rectangle
         """
-        return (f"[Rectangle] ({self.__id}) \
-                {self.__x}/{self.__y} - {self.__width}/{self.__height}")
+        return (f"[Rectangle] ({self.id})"
+                f" {self.x}/{self.y} - {self.width}/{self.height}")
 
     def update(self, *args, **kwargs):
         """public method to assign an arg to each attribute"""
-        if args and len(kwargs) != 0:
+        if args:
             a = 0
             for arg in args:
                 if a == 0:
