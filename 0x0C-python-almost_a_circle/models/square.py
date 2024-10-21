@@ -59,8 +59,7 @@ class Square(Rectangle):
         """methos that returns a dictionary with properties"""
         return {
             'id': self.id,
-            'size': self.width,
-            'size': self.height,
+            'size': self.size,
             'x': self.x,
             'y': self.y
         }
