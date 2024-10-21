@@ -24,8 +24,7 @@ class Base:
         """static method that returns JSON string"""
         if list_dictionaries is None or list_dictionaries == "[]":
             return "[]"
-        if not isinstance(list_dictionaries, list) or not all(isinstance(i, dict) for i in list_dictionaries):
-            raise TypeError("list_dictionaries must be a list of dictionaries")
+
         return json.dumps(list_dictionaries)
 
     @classmethod
@@ -35,7 +34,8 @@ class Base:
             if list_objs is None:
                 f.write("[]")
             else:
-                f.write(cls.to_json_string([obj.to_dictionary() for obj in list_objs]))
+                f.write(cls.to_json_string([obj.to_dictionary()
+                                            for obj in list_objs]))
 
     @staticmethod
     def from_json_string(json_string):
