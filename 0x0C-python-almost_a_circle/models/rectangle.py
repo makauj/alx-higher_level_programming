@@ -1,13 +1,21 @@
 #!/usr/bin/python3
 """new Rectangle class"""
-Base = __import__('base').Base
+from base import Base
 
 
 class Rectangle(Base):
     """Rectangle class"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """initialize rectangle"""
+        """initialize new rectangle
+
+        Args:
+            width: width of rectangle
+            height: height
+            x: x co-ordinate of the rectangle
+            y: y co-ordinate of the rectangle
+            id: identity of rectangle
+        """
         self.__width = width
         self.__height = height
         self.__x = x
