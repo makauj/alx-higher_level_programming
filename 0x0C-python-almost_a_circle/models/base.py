@@ -25,17 +25,19 @@ class Base:
         """static method that returns JSON string"""
         if list_dictionaries is None or list_dictionaries == "[]":
             return "[]"
-        if (type(list_dictionaries) != list or not
-        all(type(idx) == dict for idx in list_dictionaries)):
+        if type(list_dictionaries) is not list:
             raise TypeError("list_dictionary must be a list of dictionaries")
-
+        if not all(type(idx) is dict for idx in list_dictionaries):
+            raise TypeError("list_dictionary must be a list of dictionaries")
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
         """method that writes the JSON string representation to a file"""
         with open(f"{cls.__name__}.json", "w") as f:
-            if list_objs is None or not all(isinstance(objs, (Rectangle, Square)) for objs in list_objs):
+            if list_objs is None or \
+                not all(isinstance(objs, (Rectangle, Square))
+                        for objs in list_objs):
                 f.write("[]")
             else:
                 dict_list = [objs.to_dictionary() for objs in list_objs]
