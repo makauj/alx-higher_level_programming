@@ -1,9 +1,15 @@
 #!/usr/bin/python3
 import unittest
+import turtle
 import os
-from models.base import Base
-from models.rectangle import Rectangle
-from models.square import Square
+
+Base = __import__("models.base").Base
+Rectangle = __import__("models.rectangle").Rectangle
+Square = __import__("models.square").Square
+
+# from models.base import Base
+# from models.rectangle import Rectangle
+# from models.square import Square
 
 
 class TestBase(unittest.TestCase):
