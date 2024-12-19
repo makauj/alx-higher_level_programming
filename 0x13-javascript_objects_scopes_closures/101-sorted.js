@@ -4,6 +4,6 @@ const dict = require('./101-data.js').dict;
 const newDict = {};
 
 for (const [key, val] of Object.entries(dict)) {
-    newDict[val] ? newDict[val].push(key) : (newDict[val] = [key]);
-  }
-  console.log(newDict);
+  newDict[val] ? newDict[val].push(key) : (newDict[val] = [key]);
+}
+console.log(newDict);
