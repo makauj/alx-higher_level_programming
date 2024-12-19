@@ -1,17 +1,14 @@
 #!/usr/bin/node
+const dict = require('./101-data.js').dict;
 
-const { dict } = require('./101-data.js');
+const newDict = {};
 
-const invertedDict = {};
-
-for (const userId in dict) {
-  const occurrences = dict[userId].length;
-
-  if (invertedDict[occurrences]) {
-    invertedDict[occurrences].push(Number(userId));
+Object.getOwnPropertyNames(dict).forEach(occurences => {
+  const occurences = dict[userId].length;
+  if (newDict[dict[occurences]] === undefined) {
+    newDict[occurences] = [parseInt(userId)];
   } else {
-    invertedDict[occurrences] = [Number(userId)];
+    newDict[occurences].push(parseInt(userId));
   }
-}
-
-console.log(invertedDict);
+});
+console.log(newDict);
