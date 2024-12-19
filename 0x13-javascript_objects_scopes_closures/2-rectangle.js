@@ -2,14 +2,10 @@
 
 class Rectangle {
   constructor (w, h) {
-    if ((w > 0 && Number.isInteger(w)) || (h > 0 && Number.isInteger(h))) {
-      this.height = h;
+    if (typeof w === 'number' && w > 0 && typeof h === 'number' && h > 0) {
       this.width = w;
-    } else {
-      this.width = undefined;
-      this.height = undefined;
+      this.height = h;
     }
   }
 }
-
 module.exports = Rectangle;
