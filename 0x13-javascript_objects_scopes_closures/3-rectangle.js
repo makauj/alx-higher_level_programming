@@ -2,18 +2,16 @@
 
 class Rectangle {
   constructor (w, h) {
-    if ((w < 1 && Number.isInteger(w)) || h < 0 && Number.isInteger(h)) {
+    if (typeof w === 'number' && w > 0 && typeof h === 'number' && h > 0) {
       this.height = h;
       this.width = w;
-    } else {
-      return {};
     }
   }
 
   print () {
-    if (w && h) {
-      for (let i = 0; i < h; i++) {
-        console.log('X'.repeat(w));
+    if (this.width && this.height) {
+      for (let i = 0; i < this.height; i++) {
+        console.log('X'.repeat(this.width));
       }
     }
   }
