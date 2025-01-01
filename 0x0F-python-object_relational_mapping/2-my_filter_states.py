@@ -17,7 +17,7 @@ if __name__ == "__main__":
     )
 
     cursor = db.cursor()
-    q = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(argv[4])
+    q = f"SELECT * FROM states WHERE name = '{argv[4]}' ORDER BY id ASC"
     cursor.execute(q)
 
     states = cursor.fetchall()
