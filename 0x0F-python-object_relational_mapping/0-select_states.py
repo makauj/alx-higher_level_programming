@@ -16,7 +16,7 @@ if __name__ == "__main__":
     )
 
     cursor = new_db.cursor()
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+    cursor.execute("SELECT * FROM states")
 
     states = cursor.fetchall()
     for state in states:
