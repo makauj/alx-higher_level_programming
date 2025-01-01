@@ -3,10 +3,9 @@
 list the first State object from a database
 """
 
-import sqlalchemy
+from sys import argv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from sys import argv
 from model_state import Base, State
 
 if __name__ == "__main__":
