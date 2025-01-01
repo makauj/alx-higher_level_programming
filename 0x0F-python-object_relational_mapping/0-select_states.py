@@ -5,7 +5,7 @@ from sys import argv
 
 if __name__ == "__main__":
     """
-    
+    script that lists all states from the database hbtn_0e_0_usa
     """
     db = MySQLdb.connect(host="Localhost",
                          port=3306,
