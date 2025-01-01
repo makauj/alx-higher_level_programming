@@ -20,9 +20,9 @@ if __name__ == "__main__":
     cursor.execute("SELECT * FROM states WHERE name = '{}' ORDER BY id ASC"
                    .format(argv[4]))
 
-    query_rows = cursor.fetchall()
-    for row in query_rows:
-        print(row)
+    states = cursor.fetchall()
+    for state in states:
+        print(state)
 
     cursor.close()
     db.close()
