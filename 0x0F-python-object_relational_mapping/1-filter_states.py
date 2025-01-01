@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-script that filters states
+Script that lists all states with a name starting with N
+from the database hbtn_0e_0_usa
 """
 
 import MySQLdb
@@ -16,10 +17,10 @@ if __name__ == "__main__":
     cursor = db.cursor()
     cursor.execute("SELECT * from states WHERE name LIKE 'N%' ORDER BY id ASC")
 
-    query_rows = cursor.fetchball()
+    states = cursor.fetchball()
 
-    for row in query_rows:
-        print(row)
+    for state in states:
+        print(state)
 
     cursor.close()
     db.close()
