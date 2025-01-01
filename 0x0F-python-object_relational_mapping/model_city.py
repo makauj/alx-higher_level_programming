@@ -6,6 +6,7 @@ import sqlalchemy
 from sqlalchemy import Column, Integer, String, ForeignKey
 from model_state import Base, State
 
+
 class City(Base):
     """
     City class that ingerits from Base
