@@ -5,7 +5,7 @@ from sys import argv
 
 if __name__ == "__main__":
     """
-    
+    list states by id
     """
     db = MySQLdb.connect(host="Localhost",
                          port=3306,
