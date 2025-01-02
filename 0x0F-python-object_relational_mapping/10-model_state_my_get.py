@@ -13,7 +13,6 @@ if __name__ == "__main__":
     usr = sys.argv[1]
     passwd = sys.argv[2]
     db = sys.argv[3]
-    state_name = sys.argv[4]
 
     engine = create_engine(f'mysql+mysqldb://{usr}:{passwd}@localhost/{db}')
 
@@ -22,7 +21,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state = session.query(State).filter_by(state_name).first()
+    state = session.query(State).filter_by(state_name=sys.argv[4]).first()
 
     if state is not None:
         print(str(state.id))
