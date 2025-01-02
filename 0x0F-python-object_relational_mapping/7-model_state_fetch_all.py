@@ -10,11 +10,8 @@ from sys import argv
 from model_state import Base, State
 
 if __name__ == "__main__":
-    eng = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
-                        .format(argv[1],
-                                argv[2],
-                                argv[3])
-                        )
+    eng = create_engine(f'mysql+mysqldb://{argv[1]}:{argv[2]}\
+        @localhost:3306/{argv[3]}')
     Base.metadata.create_all(eng)
     Session = sessionmaker(bind=eng)
     session = Session()
