@@ -15,12 +15,13 @@ if __name__ == "__main__":
                          db=argv[3])
 
     cursor = db.cursor()
-    cursor.execute("SELECT * from states WHERE name LIKE 'N%' ORDER BY id ASC")
+    cursor.execute(f"SELECT * from states WHERE name LIKE 'N%' ORDER BY id ASC")
 
     states = cursor.fetchball()
 
     for state in states:
-        print(state)
+        if state[1][0] == 'N':
+            print(state)
 
     cursor.close()
     db.close()
