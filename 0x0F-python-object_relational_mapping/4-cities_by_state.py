@@ -25,9 +25,9 @@ if __name__ == "__main__":
                    ORDER BY cities.id ASC
                    """)
 
-    query_rows = cursor.fetchall()
-    for row in query_rows:
-        print(row)
+    states = cursor.fetchall()
+    for city in states:
+        print(city)
 
     cursor.close()
     db.close()
