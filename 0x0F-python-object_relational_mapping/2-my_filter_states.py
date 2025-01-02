@@ -17,9 +17,8 @@ if __name__ == "__main__":
     )
 
     cursor = db.cursor()
-    q = "SELECT * FROM states WHERE name LIKE '{:s}' ORDER BY \
-        state.id ASC".format(argv[4])
-    cursor.execute(q)
+    cursor.execute("SELECT * FROM states WHERE name LIKE '{:s}' ORDER BY \
+        id ASC".format(argv[4]))
 
     states = cursor.fetchall()
     for state in states:
