@@ -10,8 +10,9 @@ from sqlalchemy import sessionmaker
 from model_state import Base, State
 
 if __name__ == "__main__":
-    engine = create_engine(
-        f"mysql+mysqldb://{argv[1]}:{argv[2]}@localhost:3306/{argv[3]}")
+    db = (f"mysql+mysqldb://{argv[1]}:{argv[2]}@localhost:3306/{argv[3]}")
+    
+    engine = create_engine(db)
 
     Base.metadata.create_all(engine)
 
@@ -21,6 +22,6 @@ if __name__ == "__main__":
     states = session.query(State).order_by(State.id).all()
 
     for state in states:
-        print(f'{state.id}: {state.name}')
+        print('{0}: {1}'.format(state.id, state.name))
 
     session.close()
