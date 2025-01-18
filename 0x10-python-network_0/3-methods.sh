@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # BAsh script that takes in a URL, displays HTTPS methods the server will
 # accept
 
