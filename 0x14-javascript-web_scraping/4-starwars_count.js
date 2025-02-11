@@ -6,10 +6,10 @@ if (process.argv.length > 2) {
     if (error) {
       console.log(error);
     } else if (body) {
-        const filmsChar = JSON.parse(body).results.filter(
-            x => x.characters.find(y => y.match(/\18\/?$/))
-        );
-        console.log(filmsChar.length);
+      const filmsChar = JSON.parse(body).results.filter(
+        x => x.characters.find(y => y.match(/\18\/?$/))
+      );
+      console.log(filmsChar.length);
     }
   });
 }
