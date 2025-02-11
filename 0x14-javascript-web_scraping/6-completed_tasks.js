@@ -2,7 +2,7 @@
 const request = require('request');
 const url = process.argv[2];
 
-request.get(url, { json: true }, (err, res, body) => {
+request.get(url, { json: true }, (err, response, body) => {
   if (err) {
     console.log(err);
     return;
