@@ -12,7 +12,6 @@ if (process.argv.length > 2) {
     if (response.statusCode === 200) {
       const data = JSON.parse(body).characters;
 
-      // Loop through the character URLs
       data.forEach(element => {
         request(element, function (error, response, body) {
           if (error) {
