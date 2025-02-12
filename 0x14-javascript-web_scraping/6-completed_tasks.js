@@ -17,5 +17,5 @@ request.get(url, { json: true }, (err, response, body) => {
       }
     }
   });
-    console.log(tasks);
+  console.log(tasks);
 });
