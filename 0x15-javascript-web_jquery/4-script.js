@@ -1,5 +1,5 @@
-document.readyState(function() {
-    $('DIV#toggle_header').click(function() {
-        $('header').toggleClass('red green');
-    });
+document.readyState(function () {
+  $('DIV#toggle_header').click(function () {
+    $('header').toggleClass('red green');
+  });
 });
