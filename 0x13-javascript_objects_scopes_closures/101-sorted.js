@@ -5,9 +5,10 @@ const dict = require('./101-data.js').dict;
 
 const newDict = {};
 
-Object.getOwnPropertyNames(dict).forEach((key) => {
-  if (newDict[dict[key]] === undefined) {
-    newDict[dict[key]] = [key];
+Object.getOwnPropertyNames(dict).forEach((occurences) => {
+  if (newDict[dict[occurences]] === undefined) {
+    newDict[dict[occurences]] = [occurences];
   }
-  newDict[dict[key]].push(key);
+  newDict[dict[occurences]].push(occurences);
 });
+console.log(newDict);
